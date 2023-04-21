@@ -1,13 +1,13 @@
 /// <reference types="cypress"/>
 
 describe('Scenariusze', () => {
-
+let random = Math.random(2137)
     it('Test case 1: Register user', () => {
 
         cy.visit('/')
         cy.contains('Signup / Login').click()
         cy.get('[placeholder="Name"]').type('Name')
-        cy.get('[data-qa="signup-email"]').type('email@mail.comom')
+        cy.get('[data-qa="signup-email"]').type(`emdfvgdvdfzgvbtail${random}@mail.com`)
         cy.get('[data-qa="signup-button"').click()
         cy.get('[id="id_gender2"]').click()
         cy.get('[id="password"]').type('1234')
